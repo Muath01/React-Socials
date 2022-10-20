@@ -1,6 +1,7 @@
-import { Fab, Tooltip, Box,Modal, styled, Typography, Avatar } from '@mui/material'
+import { Fab, Tooltip, Box,Modal, styled, Typography, Avatar, TextField, ButtonGroup, Button } from '@mui/material'
 import React, { useState } from 'react'
-import {Add as AddIcon} from "@mui/icons-material"
+import {Add as AddIcon, EmojiEmotions, PersonAdd, VideoCameraBack, Image, DateRange} from "@mui/icons-material"
+import { Stack } from '@mui/system'
 
 const StyledModal = styled(Modal)({
     display:"flex",
@@ -30,7 +31,7 @@ const Add = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             >
-            <Box width={400} height={280} bgcolor="white" p={3} borderRadius={5}>
+            <Box width={400} height={280}  bgcolor={"background.default"} color={"text.primary"} p={3} borderRadius={5}>
                 <Typography variant='h6' color="grey" textAlign="center">Add Post</Typography>
                 <UserBox>
                     <Avatar alt="Travis Howard" src="https://material-ui.com/static/images/avatar/3.jpg"
@@ -38,6 +39,27 @@ const Add = () => {
 
                     <Typography fontWeight={500} variant="span">John Doe</Typography>
                 </UserBox>
+
+                <TextField
+                    sx={{width:"100%"}}
+                    id="standard-multiline-static"
+                    multiline
+                    rows={2}
+                    // defaultValue="Default Value"
+                    placeholder='Whats in your mind'
+                    variant="standard"
+                />
+                <Stack direction="row" gap={1} mt={2} mb={3}>
+                    <EmojiEmotions color='primary'/>
+                    <Image color="secondary" />
+                    <VideoCameraBack color='success'/>
+                    <PersonAdd color='error'/>
+                </Stack>
+
+                <ButtonGroup fullWidth variant="contained" aria-label="outlined primary button group">
+                    <Button>Post</Button>
+                    <Button sx={{width:"100px"}}><DateRange /></Button>
+                </ButtonGroup>
             </Box>
         </StyledModal>
     </div>

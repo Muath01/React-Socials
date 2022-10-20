@@ -1,4 +1,4 @@
-import { Box, Button, Container, styled, Typography } from '@mui/material';
+import { Box, Button, Container, createTheme, styled, ThemeProvider, Typography } from '@mui/material';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Settings } from '@mui/icons-material';
 import Sidebar from './components/Sidebar';
@@ -7,20 +7,29 @@ import Navbar from './components/Navbar';
 import Rightbar from './components/Rightbar';
 import Add from "./components/Add"
 import { Stack } from '@mui/system';
+import { useState } from 'react'
 
 function App() {
 
-  return (
-    <Box>
+  const [mode, setMode] = useState("light")
 
-      <Navbar />
-      <Stack direction="row" spacing={2} justifyContent="center">
-        <Sidebar />
-        <Feed />
-        <Rightbar />
-      </Stack>
-      <Add/>
-    </Box>
+  const darkTheme = createTheme({
+    palette:{
+      mode:mode
+    }
+  })
+  return (
+      <ThemeProvider theme={darkTheme}>
+          <Box bgcolor={"background.default"} color={"text.primary"}>
+          <Navbar />
+          <Stack direction="row" spacing={2} justifyContent="center">
+            <Sidebar mode={mode} setMode={setMode} />
+            <Feed />
+            <Rightbar />
+          </Stack>
+          <Add/>
+        </Box>
+      </ThemeProvider>
   );
 }
 

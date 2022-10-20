@@ -2,7 +2,7 @@ import { AccountBox, Article, Groups, Home, Inbox, ModeNight, Nightlight, Pages,
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from '@mui/material'
 import React, { Profiler } from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({mode, setMode}) => {
   return (
     <Box flex={1} p={2} sx={{display:{xs:"none", sm:"block"}}}>
         <Box position="fixed">
@@ -93,7 +93,7 @@ const Sidebar = () => {
                     <ListItemIcon>
                         <Nightlight />
                     </ListItemIcon>
-                    <Switch></Switch>
+                    <Switch onChange={e => setMode(mode === "light" ? "dark" : "light")}></Switch>
             </ListItemButton>
         </ListItem>
     </List>

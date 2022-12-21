@@ -1,104 +1,85 @@
-import { AccountBox, Article, Groups, Home, Inbox, ModeNight, Nightlight, Pages, Person, Settings, Storefront } from '@mui/icons-material'
+import { AccountBox, Article, Groups, Home, Inbox, LocalGroceryStore, ModeNight, Nightlight, Pages, Person, Settings, Storefront } from '@mui/icons-material'
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from '@mui/material'
 import React, { Profiler } from 'react'
 
-const Sidebar = ({mode, setMode}) => {
+const Sidebar = ({setMode, mode}) => {
   return (
-    <Box flex={1} p={2} sx={{display:{xs:"none", sm:"block"}}}>
-        <Box position="fixed">
-
-    
+   <Box 
+   flex={1} 
+   p={2} 
+   sx={{display: {xs : "none", sm : "block"}}}>
+    sideBar
+    <Box sx={{position:"fixed"}}>
 
     <List>
-        {/* Item one */}
+        {/* item 1 */}
         <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
-                    <ListItemIcon>
-                        <Home />
-                    </ListItemIcon>
-                <ListItemText primary="Inbox" />
-            </ListItemButton>
+        <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+            <Home/>
+            </ListItemIcon>
+            <ListItemText primary="Homepage" />
+        </ListItemButton>
         </ListItem>
 
-        {/* Item Two */}
-
+        {/* Item 2 */}
         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <Article />
-                    </ListItemIcon>
-                <ListItemText primary="Pages" />
-            </ListItemButton>
+        <ListItemButton component="a" href="#pages">
+            <ListItemIcon>
+            <Pages/>
+            </ListItemIcon>
+            <ListItemText primary="pages" />
+        </ListItemButton>
         </ListItem>
 
-        {/* Item Three */}
-
+        {/* Item 3 */}
         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <Groups />
-                    </ListItemIcon>
-                <ListItemText primary="Groups" />
-            </ListItemButton>
+        <ListItemButton component="a" href="#groups">
+            <ListItemIcon>
+            <Groups/>
+            </ListItemIcon>
+            <ListItemText primary="Groups" />
+        </ListItemButton>
         </ListItem>
-
-         {/* Item Three */}
-
-         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <Storefront />
-                    </ListItemIcon>
-                <ListItemText primary="MarketPlace" />
-            </ListItemButton>
+        {/* Item 4 */}
+        <ListItem disablePadding>
+        <ListItemButton component="a" href="#Marketplace">
+            <ListItemIcon>
+            <LocalGroceryStore/>
+            </ListItemIcon>
+            <ListItemText primary="Marketplace" />
+        </ListItemButton>
         </ListItem>
-
-         {/* Item Three */}
-
-         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <Person />
-                    </ListItemIcon>
-                <ListItemText primary="Friends" />
-            </ListItemButton>
+        {/* Item 5 */}
+        <ListItem disablePadding>
+        <ListItemButton component="a" href="#Settings">
+            <ListItemIcon>
+            <Settings/>
+            </ListItemIcon>
+            <ListItemText primary="Settings" />
+        </ListItemButton>
         </ListItem>
-
-         {/* Item Three */}
-
-         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <Settings />
-                    </ListItemIcon>
-                <ListItemText primary="Settings" />
-            </ListItemButton>
+        {/* Item 6 */}
+        <ListItem disablePadding>
+        <ListItemButton component="a" href="#profile">
+            <ListItemIcon>
+            <AccountBox/>
+            </ListItemIcon>
+            <ListItemText primary="profile" />
+        </ListItemButton>
         </ListItem>
-
-         {/* Item Three */}
-
-         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <AccountBox />
-                    </ListItemIcon>
-                <ListItemText primary="Profile" />
-            </ListItemButton>
-        </ListItem>
-        
-         {/* Item Three */}
-
-         <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-                    <ListItemIcon>
-                        <Nightlight />
-                    </ListItemIcon>
-                    <Switch onChange={e => setMode(mode === "light" ? "dark" : "light")}></Switch>
-            </ListItemButton>
+        {/* Item 6 */}
+        <ListItem disablePadding>
+        <ListItemButton component="a" href="#profile">
+            <ListItemIcon>
+            <ModeNight/>
+            </ListItemIcon>
+            <Switch onChange={e => setMode(mode == "light" ? "dark" : "light")} />
+        </ListItemButton>
         </ListItem>
     </List>
-        </Box>
     </Box>
+    </Box >
   )
 }
 

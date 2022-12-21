@@ -5,11 +5,10 @@ import React from 'react'
 
 export const Post = ({link}) => {
   return (
-    <div>
-            <Card>
+        <Card sx={{margin:5}}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
             R
           </Avatar>
         }
@@ -23,8 +22,8 @@ export const Post = ({link}) => {
       />
       <CardMedia
         component="img"
-        height="500px"
-        image={link}
+        height="20%"
+        image="https://images.pexels.com/photos/10039008/pexels-photo-10039008.jpeg"
         alt="Paella dish"
       />
       <CardContent>
@@ -35,16 +34,14 @@ export const Post = ({link}) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite color='error'/>} />
-        </IconButton>
+        <Checkbox  icon={<FavoriteBorder />} checkedIcon={<Favorite color="error"/>} />
+
         <IconButton aria-label="share">
           <Share />
         </IconButton>
 
       </CardActions>
+      
     </Card>
-      <br></br>
-    </div>
   )
 }
